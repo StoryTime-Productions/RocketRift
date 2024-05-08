@@ -5,8 +5,22 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     bool gameIsPaused = false;
 
+    // Static reference to the PauseMenu instance
+    static PauseMenu instance;
+
     void Start()
     {
+        // If an instance already exists, destroy this one
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Set this instance as the singleton instance
+        instance = this;
+
+        // Make this object persistent across scenes
         DontDestroyOnLoad(gameObject);
     }
 
@@ -40,7 +54,9 @@ public class PauseMenu : MonoBehaviour
         // Reload the current scene
         int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex);
-        Resume(); // Make sure to resume the game after restarting
+
+        // Reset the game state
+        Resume();
     }
 
     public void Quit()
