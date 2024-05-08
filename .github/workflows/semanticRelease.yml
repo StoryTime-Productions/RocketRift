@@ -74,12 +74,12 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: StandaloneWindows64
-          projectPath: ./ObstacleRush/
+          projectPath: ./RocketRift/
 
       - uses: actions/upload-artifact@v4
         if: steps.determine_action.outputs.action == 'create_release'
         with:
-          name: ObstacleRush
+          name: RocketRift
           path: build
 
       - name: Download Latest Artifact
@@ -90,7 +90,7 @@ jobs:
           "https://api.github.com/repos/${{ github.repository }}/actions/artifacts" | jq -r '.artifacts[0].archive_download_url')
 
           # Download the latest artifact
-          curl -L -o ObstacleRush.zip -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$artifact_url"
+          curl -L -o RocketRift.zip -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$artifact_url"
 
       - name: Get Latest Release Upload URL
         if: steps.determine_action.outputs.action == 'create_release'
@@ -106,6 +106,6 @@ jobs:
         run: |
           release_upload_url=$(echo "${{ steps.get_release_upload_url.outputs.release_upload_url }}" | sed 's/{?name,label}//')
           tag_name="${{ steps.previoustag.outputs.tag }}"
-          mv ObstacleRush.zip "ObstacleRush-[BUILD-${tag_name}].zip"
+          mv RocketRift.zip "RocketRift-[BUILD-${tag_name}].zip"
           curl -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/zip" \
-          --data-binary "@ObstacleRush-[BUILD-${tag_name}].zip" "$release_upload_url?name=ObstacleRush-${tag_name}.zip"
+          --data-binary "@RocketRift-[BUILD-${tag_name}].zip" "$release_upload_url?name=RocketRift-${tag_name}.zip"
