@@ -1,7 +1,7 @@
 #
 <p align="center">
 <br>
-  <img src="https://i.imgur.com/DSpFrgs.png" height="100" width="auto"/>
+  <img src="https://i.imgur.com/DSpFrgs.png" height="100%" width="auto"/>
   <br>
   <br>
   <img src="https://img.shields.io/badge/License-MIT-purple.svg" />
