@@ -291,7 +291,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345672667}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 1c8e640b79570344cb32589439e0a244, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 9da8ededcfaeb0b4d9414ed83bdb9367, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -307,7 +307,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: https://imgur.com/VaMZ6jw
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -789,7 +789,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487187512}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: dfac46e95ceb08c45a578e2a4217f394, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 850bee1e940f36f4bb823324911f1992, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
